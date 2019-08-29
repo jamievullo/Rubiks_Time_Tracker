@@ -76,6 +76,10 @@
     clear: both;
   }
 
+  .danger{
+    color: red;
+  }
+
   footer.branding {
     border-top: 2px solid #ccc;
     margin-top: 20px;

@@ -6,6 +6,8 @@ end
 
 use Rack::MethodOverride
 
-run ApplicationController
+
 use CubeTimesController
 use CubersController
+use SessionsController
+run ApplicationController
