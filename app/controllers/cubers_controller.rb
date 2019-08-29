@@ -1,5 +1,14 @@
 class CubersController < ApplicationController
 
+  get '/cuber/login' do
+    erb :'/cuber/login'
+  end
+
+  get '/cuber/signup' do
+    erb :'/cuber/signup'
+  end 
+
+
   # GET: /cubers
   get "/cubers" do
     @cubers = Cuber.all
