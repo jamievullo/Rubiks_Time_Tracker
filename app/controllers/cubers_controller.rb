@@ -2,6 +2,7 @@ class CubersController < ApplicationController
 
   # GET: /cubers
   get "/cubers" do
+    @cubers = Cuber.all
     erb :"/cubers/index.html"
   end
 
@@ -17,11 +18,13 @@ class CubersController < ApplicationController
 
   # GET: /cubers/5
   get "/cubers/:id" do
+    @cuber = Cuber.find(params[:id])
     erb :"/cubers/show.html"
   end
 
   # GET: /cubers/5/edit
   get "/cubers/:id/edit" do
+    @cuber = Cuber.find(params[:id])
     erb :"/cubers/edit.html"
   end
 

@@ -8,5 +8,4 @@ end
 
 run ApplicationController
 use CubeTimesController
-use CubesController
 use CubersController
