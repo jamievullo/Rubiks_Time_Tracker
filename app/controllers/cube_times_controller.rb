@@ -2,12 +2,12 @@ class CubeTimesController < ApplicationController
 
   # GET: /cube_times
   get "/cube_times" do
-    erb :"/cube_times/index.html"
+    erb :"/cube_times/index"
   end
 
   # GET: /cube_times/new
   get "/cube_times/new" do
-    erb :"/cube_times/new.html"
+    erb :"/cube_times/new"
   end
 
   # POST: /cube_times
@@ -17,12 +17,12 @@ class CubeTimesController < ApplicationController
 
   # GET: /cube_times/5
   get "/cube_times/:id" do
-    erb :"/cube_times/show.html"
+    erb :"/cube_times/show"
   end
 
   # GET: /cube_times/5/edit
   get "/cube_times/:id/edit" do
-    erb :"/cube_times/edit.html"
+    erb :"/cube_times/edit"
   end
 
   # PATCH: /cube_times/5
