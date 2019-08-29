@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 20190828020841) do
 
   create_table "cubers", force: :cascade do |t|
     t.string   "name"
-    t.string   "state"
     t.string   "country"
+    t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
