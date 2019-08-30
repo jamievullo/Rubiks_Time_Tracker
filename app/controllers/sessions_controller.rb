@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     end
 
     post '/login' do
-        cuber = Cuber.find_by(username: params[:username])
+        cuber = Cuber.find_by(name: params[:name])
         if !!cuber && cuber.authenticate(params[:password])
             session[:user_id] = user.id
             redirect '/cubers/index' #???
