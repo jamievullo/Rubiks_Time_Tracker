@@ -2,7 +2,11 @@ class CubeTimesController < ApplicationController
 
   # GET: /cube_times
   get "/cube_times" do
+    if authenticate #method in helper
     erb :"/cube_times/index"
+    else
+      "Unauthorized access please Login or Signup"
+    end
   end
 
   # GET: /cube_times/new

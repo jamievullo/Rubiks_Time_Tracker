@@ -4,8 +4,9 @@
     <input id="name" type="text" name="name">
     <label for="password">Password:</label>
     <input id="password" type="password" name="password">
-    <input type="submit" value='Login'>
     <% if @failed %>
         <p class="danger"> Your username/password was incorrect </p>
     <% end %>
+    <input type="submit" value='Login'>
+    
 </form>
