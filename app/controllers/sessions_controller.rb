@@ -8,8 +8,8 @@ class SessionsController < ApplicationController
     post '/login' do
         cuber = Cuber.find_by(name: params[:name])
         if !!cuber && cuber.authenticate(params[:password])
-            session[:user_id] = user.id
-            redirect '/cubers/cube_times' #???
+            session[:user_id] = cuber.id
+            redirect '/cube_times' #???
         else
             @failed = true
             redirect '/sessions/login'
@@ -21,9 +21,15 @@ class SessionsController < ApplicationController
     end
 
     post '/signup' do 
-        
-
-    end
+        if params[:name] == "" || params[:password] == ""
+            redirect "/signup"
+          else
+            @cuber = Cuber.new(params)
+            @cuber.save
+            session[:user_id] = @cuber.id
+            redirect "/cube_times"
+          end    
+        end  
 
 
 end

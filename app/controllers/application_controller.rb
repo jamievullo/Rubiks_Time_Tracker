@@ -23,11 +23,11 @@ class ApplicationController < Sinatra::Base
       @current_cuber ||= Cuber.find_by(id: session[:user_id]) if session[:user_id]
     end
 
-    def authenticate
-      if logged_in?
-        redirect '/login'
-      end
-    end
+    # def authenticate
+    #   if logged_in?
+    #     redirect '/login'
+    #   end
+    #end
 
 
   end
