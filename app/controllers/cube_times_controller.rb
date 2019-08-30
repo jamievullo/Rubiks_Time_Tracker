@@ -14,8 +14,21 @@ class CubeTimesController < ApplicationController
 
   # POST: /cube_times
   post "/cube_times" do
-    raise params.inspect
-    #redirect "/cube_times"
+    if logged_in?
+      if params[:cube_time] == ""
+        redirect "/cube_times/new"
+      else
+        @cube_time =  CubeTime.create(params)
+        @cube_time.cuber_id = current_cuber.id
+        if @cube_time.save
+          redirect "/cube_times/#{@cube_time.id}"
+        else  
+          redirect "/cube_times/new"
+        end
+      end
+    else
+      redirect "/login"
+    end
   end
 
   # # GET: /cube_times/5
