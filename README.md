@@ -4,10 +4,10 @@
 A simple time tracker web application/content management system made using the Sinatra gem with ActiveRecord and the Ruby programming language. 
 
 ## Table of Contents
-*General info
-*Technologies
-*Setup
-*Status
+* General info
+* Technologies
+* Setup
+* Status
 
 ### Description
 This is a small application that can be used for keeping track of your times while honing your skills at SppedCubing.
