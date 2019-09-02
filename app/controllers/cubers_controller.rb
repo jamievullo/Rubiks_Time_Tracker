@@ -1,18 +1,18 @@
 class CubersController < ApplicationController
 
-  # GET: /cubers
   get "/cubers" do
     @cubers = Cuber.all
+
     erb :"/cubers/index"
   end
 
-  # GET: /cubers/new
   get "/cubers/new" do
+
     erb :"/cubers/new"
   end
 
-  # POST: /cubers
   post "/cubers" do
+    
     redirect "/cubers"
   end
 

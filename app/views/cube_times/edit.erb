@@ -1,6 +1,6 @@
 <h1> <%= @cube_time.last %></h1>
 
-<p><a href="/cube_times/<%= cubetime.id %>/edit">Edit last cube time</a></p>
+<p><a href="/cube_times/<%= cube_time.id %>/edit">Edit last cube time</a></p>
 <form action="/cube_times/ <%= @cube_time.id %>" method="POST">
 <input type="hidden" name="_method" value="PATCH">
 <input type="submit" value="Edit Time">

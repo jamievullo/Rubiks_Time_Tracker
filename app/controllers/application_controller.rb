@@ -10,6 +10,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    
     erb :index
   end
 
@@ -22,13 +23,6 @@ class ApplicationController < Sinatra::Base
     def current_cuber
       @current_cuber ||= Cuber.find_by(id: session[:user_id]) if session[:user_id]
     end
-
-    # def authenticate
-    #   if logged_in?
-    #     redirect '/login'
-    #   end
-    #end
-
 
   end
 

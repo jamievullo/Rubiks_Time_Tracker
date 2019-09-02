@@ -1,26 +1,27 @@
 class CubeTimesController < ApplicationController
 
-  # GET: /cube_times
   get "/cube_times" do
     @cuber = current_cuber
-    # @cube_times = 
+
     erb :"/cube_times/index"
   end
 
-  # GET: /cube_times/new
   get "/cube_times/new" do
+    @cube_times = CubeTime.all
+
     erb :"/cube_times/new"
   end
 
-  # POST: /cube_times
   post "/cube_times" do
     if logged_in?
       if params[:cube_time] == ""
+
         redirect "/cube_times/new"
       else
         @cube_time =  CubeTime.create(params)
         @cube_time.cuber_id = current_cuber.id
         if @cube_time.save
+          
           redirect "/cube_times/#{@cube_time.id}"
         else  
           redirect "/cube_times/new"
