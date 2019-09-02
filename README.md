@@ -4,16 +4,17 @@
 A simple time tracker web application/content management system made using the Sinatra gem with ActiveRecord and the Ruby programming language. 
 
 ## Table of Contents
-* General info
+* Description
 * Technologies
 * Setup
-* Status
+* Resources
 
 ### Description
 This is a small application that can be used for keeping track of your times while honing your skills at SppedCubing.
 
 ### Technologies
 This application utilizes the Ruby language and several gems (listed)
+* Ruby ~> 2.6.4
 * Sinatra
 * ActiveRecord ~> 4.2
 * Sinatra-Activerecord
@@ -29,4 +30,17 @@ This application utilizes the Ruby language and several gems (listed)
 * Capybara
 * Rack-test
 * Database_cleaner
+
+### Setup
+* To run this web application you must clone it from GitHub@JamieVullo/RubiksTimeTracker goto https://github.com/jamievullo/Rubiks_Time_Tracker and clone into your terminal.
+* cd Rubiks_Time_Tracker
+* Bundle Install
+* Run Shotgun from the command line
+
+### Sources and Resources used
+* http://sinatrarb.com/documentation.html
+* http://learn.co
+* https://rubygems.org/
+* https://stackoverflow.com/
+* https://www.favicon-generator.org/
 
