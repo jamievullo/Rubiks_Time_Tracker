@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
 
     get '/login' do
-        @failed = false
-        erb :'sessions/login'
+        #@failed = false
+        erb :'/sessions/login'
     end
 
     post '/login' do
@@ -11,25 +11,33 @@ class SessionsController < ApplicationController
             session[:user_id] = cuber.id
             redirect '/cube_times' #???
         else
-            @failed = true
+            #@failed = true
             redirect '/sessions/login'
         end
     end
 
     get '/signup' do
-        erb :'sessions/signup'
+        erb :'/sessions/signup'
     end
 
     post '/signup' do 
         if params[:name] == "" || params[:password] == ""
-            redirect "/signup"
-          else
+            redirect '/signup'
+        else
             @cuber = Cuber.new(params)
             @cuber.save
             session[:user_id] = @cuber.id
-            redirect "/cube_times"
-          end    
-        end  
-
+            redirect '/cube_times'
+        end    
+    end  
+    
+    get '/logout' do
+        #
+            session.clear
+            redirect '/'
+        # else
+        # redirect '/'
+        # end
+    end
 
 end
