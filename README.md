@@ -36,6 +36,7 @@ This application utilizes the Ruby language and several gems (listed)
 * cd Rubiks_Time_Tracker
 * Bundle Install
 * Run Shotgun from the command line
+* Goto localhost:9393 in your browser
 * Signup for app by creating a Username, Password and entering valid email address.
 * Start entering cube times and keep track of your personal progress and accomplishments.
 
