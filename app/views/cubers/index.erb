@@ -1,7 +1,9 @@
+<header><img align="center" src="/images/giphy2.gif"></header>
+
 <h2><%= @cuber.name %>'s Home Page</h2>
 
 <p>Personal Best: <%= @best_cube_time.cube_time %></p>
-<p>Overall Average: <%= @average_cube_time %></p>
+<p>Overall Average: <%= @average_cube_time.round(2) %></p>
 
 <a href="/cube_times/new"><input type="submit" value="Enter New Time"></a>
 <br>

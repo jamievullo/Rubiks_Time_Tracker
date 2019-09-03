@@ -11,7 +11,6 @@ class CubeTimesController < ApplicationController
 
   get "/cube_times/new" do
     if logged_in?
-      #@cube_times = CubeTime.all
       erb :"/cube_times/new"
     else  
       redirect '/login'
@@ -39,11 +38,15 @@ class CubeTimesController < ApplicationController
   end
 
   get "/cube_times/:id" do
-    @cuber = current_cuber
-    @cube_time = CubeTime.find(params[:id])
-    #binding.pry
+    if logged_in?
+      @cuber = current_cuber
+      @cube_time = CubeTime.find(params[:id])
+      #binding.pry
 
-    erb :"/cube_times/show"
+      erb :"/cube_times/show"
+    else 
+      redirect "/login" 
+    end
   end
 
   get "/cube_times/:id/edit" do
@@ -62,15 +65,23 @@ class CubeTimesController < ApplicationController
   end
 
   patch "/cube_times/:id" do
-    @cuber = current_cuber
-    @cube_time = CubeTime.find_by_id(params[:id]) 
-    @cube_time.cube_time = params[:cube_time]
-    @cube_time.save
+    if logged_in?
+      @cuber = current_cuber
+      @cube_time = CubeTime.find_by_id(params[:id]) 
+      @cube_time.cube_time = params[:cube_time]
+      @cube_time.save
     #binding.pry
-    redirect "/cube_times/#{@cube_time.id}"
+      redirect "/cube_times/#{@cube_time.id}"
+    else
+      redirect "/login"
+    end
   end
 
   delete "/cube_times/:id/delete" do
-    redirect "/cube_times/new"
+    if logged_in?
+      redirect "/cube_times/new"
+    else 
+      redirect "/login"   
+    end
   end
 end
