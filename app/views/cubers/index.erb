@@ -1,3 +1,9 @@
-<h1><%= @cuber.name %>'s Home Page</h1>
+<h2><%= @cuber.name %>'s Home Page</h2>
 
-<a href="cube_time/new">Enter new cube time here</a>
+<p>Personal Best: <%= @best_cube_time.cube_time %></p>
+<p>Overall Average: <%= @average_cube_time %></p>
+
+<a href="/cube_times/new"><input type="submit" value="Enter New Time"></a>
+<br>
+<a href="/logout"><input type="submit" value="Logout"></a>
+
