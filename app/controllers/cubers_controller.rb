@@ -6,6 +6,9 @@ class CubersController < ApplicationController
       @cube_times = CubeTime.where("cuber_id = ?", @cuber.id)
       @best_cube_time = @cube_times.order(cube_time: :asc).first
       @average_cube_time = @cube_times.sum("cube_time")/@cube_times.count
+      @last_5 = @cube_times.last(5)
+      # @average_last_5 = @cube_times.last(5)
+      #binding.pry
       erb :"/cubers/index"
     else
 

@@ -2,8 +2,12 @@
 
 <h2><%= @cuber.name %>'s Home Page</h2>
 
-<p>Personal Best: <%= @best_cube_time.cube_time %></p>
-<p>Overall Average: <%= @average_cube_time.round(2) %></p>
+<p>Personal Best: <br> <%= @best_cube_time.cube_time %></p>
+<p>Overall Average: <br> <%= @average_cube_time.round(2) %></p>
+<p>Last 5 Cube Times: </p>
+<% @last_5.each do |x| %>
+<p><%= x.cube_time %></p>
+<% end %>
 
 <a href="/cube_times/new"><input type="submit" value="Enter New Time"></a>
 <br>
