@@ -10,7 +10,7 @@ A simple time tracker web application/content management system made using the S
 * Resources
 
 ### Description
-This is a small application that can be used for keeping track of your times while honing your skills at SppedCubing.
+This is a small application that can be used for keeping track of your times while honing your skills at SpeedCubing.
 
 ### Technologies
 This application utilizes the Ruby language and several gems (listed)
