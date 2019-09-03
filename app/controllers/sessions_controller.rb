@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
             @cuber = Cuber.new(params)
             @cuber.save
             session[:user_id] = @cuber.id
-
+            #binding.pry
             redirect "/cube_times"
         end    
     end  

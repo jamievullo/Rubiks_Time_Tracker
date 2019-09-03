@@ -1,2 +1,8 @@
-<h1>This is the show page for an individual instance of your model.</h1>
-<p> cube_times.all </p>
+<h2><%= @cuber.name %>'s Last Cube Time</h2>
+<p><%= @cube_time.cube_time %></p>
+<a href="/cube_times/<%= @cube_time.id %>/edit">
+<input type="submit" value="Edit Time"></a>
+<form method="POST" action="/cube_times/ <%= @cube_time.id %>/delete">
+<input type="hidden" type="hidden" name="_method" value="DELETE">
+<input type="submit" value="Delete">
+</form>
