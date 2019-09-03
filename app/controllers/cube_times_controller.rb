@@ -38,10 +38,10 @@ class CubeTimesController < ApplicationController
     end
   end
 
-  # # GET: /cube_times/5
-  # get "/cube_times/:id" do
-  #   erb :"/cube_times/show"
-  # end
+  # GET: /cube_times/5
+  get "/cube_times/:id" do
+    erb :"/cube_times/show"
+  end
 
   get "/cube_times/:id/edit" do
     if logged_in?
