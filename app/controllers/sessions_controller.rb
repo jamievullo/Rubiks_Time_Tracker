@@ -7,13 +7,13 @@ class SessionsController < ApplicationController
 
     post '/login' do
         cuber = Cuber.find_by(name: params[:name])
-        if !!cuber && cuber.authenticate(params[:password])
-            session[:user_id] = cuber.id
+      if !!cuber && cuber.authenticate(params[:password])
+        session[:user_id] = cuber.id
 
-            redirect '/cube_times'
-        else
-            redirect '/sessions/login'
-        end
+        redirect '/cube_times'
+      else
+        redirect '/sessions/login'
+      end
     end
 
     get '/signup' do
@@ -22,16 +22,16 @@ class SessionsController < ApplicationController
     end
 
     post '/signup' do 
-        if params[:name] == "" || params[:password] == ""
+      if params[:name] == "" || params[:password] == "" || params[:email] == ""
 
-            redirect "/signup"
-        else
-            @cuber = Cuber.new(params)
-            @cuber.save
-            session[:user_id] = @cuber.id
-            #binding.pry
-            redirect "/cube_times"
-        end    
+        redirect "/signup"
+      else
+        @cuber = Cuber.new(params)
+        @cuber.save
+        session[:user_id] = @cuber.id
+        
+        redirect "/cube_times"
+      end    
     end  
     
     get '/logout' do
@@ -39,5 +39,4 @@ class SessionsController < ApplicationController
         
         redirect '/'
     end
-
 end

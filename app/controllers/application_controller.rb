@@ -23,7 +23,5 @@ class ApplicationController < Sinatra::Base
     def current_cuber
       @current_cuber ||= Cuber.find_by(id: session[:user_id]) if session[:user_id]
     end
-
   end
-
 end
