@@ -8,20 +8,7 @@
 <% @last_5.each do |x| %>
 <p><%= x.cube_time %></p>
 <% end %>
-<link rel="stylesheet" href="/stylesheets/main.css" />
-<nav>
-    <ul>
-        <li><a href="#">Select Cube Type</a>
-            <ul>
-                <li><a href="#">2x2</a></li>
-                <li><a href="#">3x3</a></li>
-                <li><a href="#">4x4</a></li>
-                <li><a href="#">5x5</a></li>
-                <li><a href="#">6x6</a></li>
-            </ul>
-        </li>
-    </ul>
-</nav>
+
 <a href="/cube_times/new"><input type="submit" value="Enter New Time"></a>
 <br>
 <a href="/logout"><input type="submit" value="Logout"></a>
