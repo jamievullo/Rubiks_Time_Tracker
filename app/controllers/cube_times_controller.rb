@@ -10,6 +10,7 @@ class CubeTimesController < ApplicationController
   end
 
   get "/cube_times/new" do
+    @cuber = current_cuber
     if logged_in?
       erb :"/cube_times/new"
     else  
@@ -18,6 +19,7 @@ class CubeTimesController < ApplicationController
   end
 
   post "/cube_times" do
+    binding.pry
     if logged_in?
       if params[:cube_time] == ""
 

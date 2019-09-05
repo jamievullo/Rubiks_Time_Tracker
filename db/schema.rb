@@ -11,11 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190828020841) do
+ActiveRecord::Schema.define(version: 20190905131503) do
 
   create_table "cube_times", force: :cascade do |t|
     t.float    "cube_time"
     t.integer  "cuber_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cube_types", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,6 +32,13 @@ ActiveRecord::Schema.define(version: 20190828020841) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "cubes", force: :cascade do |t|
+    t.integer  "cube_times_id"
+    t.integer  "cube_types_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end

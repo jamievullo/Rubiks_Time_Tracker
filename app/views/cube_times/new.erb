@@ -1,5 +1,12 @@
-<!--<link rel="stylesheet" href="/stylesheets/main.css" />
+<!--<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+<body>
 <nav>
+
     <ul>
         <li><a href="#">Select Cube Type</a>
             <ul>
@@ -12,11 +19,21 @@
         </li>
     </ul>
 </nav>-->
+<h2><%= @cuber.name %></h2>
+<h3>Select Cube Type:</h3>
+
+
+<form action="/cube_times" method="POST">
+<% CubeType.all.each do |type| %>
+<input type="checkbox" name="cube_type" id="<%= type.id %>" value="<%= type.id %>"><%= type.name %></input></br>
+<% end %>
 
 <h3>Enter Your last Cube Time here:</h3>
 
-<form action="/cube_times" method="POST">
+
 <label for="cube_time">Time:</label>
 <input id="cube_time" type="float" name="cube_time">
 <input type="submit" value="Enter">
 </form>
+<!--</body>
+</html>-->

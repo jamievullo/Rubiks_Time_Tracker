@@ -1,6 +1,6 @@
 class Cube < ActiveRecord::Base
 
-    belongs_to :cuber 
-    belongs_to :cube_time
+    belongs_to :cubers
+    belongs_to :cube_times
 
 end
