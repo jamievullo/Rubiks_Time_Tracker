@@ -19,14 +19,17 @@ class CubeTimesController < ApplicationController
   end
 
   post "/cube_times" do
-    binding.pry
+    #binding.pry
     if logged_in?
-      if params[:cube_time] == ""
+      if params[:cube_time] == "" || params[:cube_type] == ""
 
         redirect '/cube_times/new'
       else
-        @cube_time = CubeTime.create(params)
+        binding.pry
+        @cube_time = CubeTime.create(cube_time: params[:cube_time])
         @cube_time.cuber_id = current_cuber.id
+        @cube_type = CubeType.find_by_id(params[:cube_type])
+        # binding.pry
         if @cube_time.save
           
           redirect "/cube_times/#{@cube_time.id}"

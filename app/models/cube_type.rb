@@ -1,5 +1,6 @@
 class CubeType < ActiveRecord::Base
 
-    belongs_to :cube 
+    belongs_to :cuber
+    has_many :cube_times
 
 end
