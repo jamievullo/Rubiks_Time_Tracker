@@ -4,7 +4,7 @@
 
 <form action="/cube_times" method="POST">
 <% CubeType.all.each do |type| %>
-<input type="checkbox" name="cube_type" id="<%= type.id %>" value="<%= type.id %>"><%= type.name %></input></br>
+<input type="radio" name="cube_type" id="<%= type.id %>" value="<%= type.id %>"><%= type.name %></input></br>
 <% end %>
 
 <h3>Enter Your last Cube Time here:</h3>

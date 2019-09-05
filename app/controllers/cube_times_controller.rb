@@ -25,7 +25,7 @@ class CubeTimesController < ApplicationController
 
         redirect '/cube_times/new'
       else
-        binding.pry
+        #binding.pry
         @cube_time = CubeTime.create(cube_time: params[:cube_time])
         @cube_time.cuber_id = current_cuber.id
         @cube_type = CubeType.find_by_id(params[:cube_type])
