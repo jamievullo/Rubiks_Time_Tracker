@@ -47,6 +47,52 @@
     line-height: 36px;
   }
 
+  /*nav {
+    width: 50%;
+    height: 40px;
+    background-color: #fff;
+  }
+
+  nav ul {
+    float: left;
+  }
+
+  nav ul li {
+    float: left;
+    list-style: none;
+    position: relative;
+  }
+
+  nav ul li a {
+    display: block;
+    font-family: arial;
+    color: #222 
+    font-size: 14px;
+    padding: 22px 14px;
+    text-decoration: none;
+  }
+
+  nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    padding: 3px;
+    border-radius: 0px 0px 4px 4px;
+  }
+
+  nav ul li:hover ul {
+    display: block;
+    
+  }
+
+  nav ul li ul li {
+    width: 50px;  
+  }
+
+  nav ul li ul li a:hover {
+    background-color: #d3d3d3;
+  }*/
+
   p {
     margin-bottom: 18px;
   }
