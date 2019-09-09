@@ -15,7 +15,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <!--do a conditional "if current_user render nav bar"  -->
+
      <% if logged_in? %>
      
       <h2>Welcome, <%= current_cuber.name %>!</h2>
@@ -42,3 +42,15 @@
     <![endif]-->
   </body>
 </html>
+
+div class="content">
+      <p>Welcome to the Rubiks Time Tracker tool. Here, you'll be able to keep track of your cubing speed Average and Personal Best.
+      If you do not have an account, please signup to access the awesome features. 
+      If you are an existing Cuber, please login to your account.</p>
+    </div>
+
+    <div style="text-align: center" class="sidebar">
+      <h3><a href='/signup'> Signup</a> or <a href='/login'</a> Login</h3>
+    </div>
+  </div>
+</div>
