@@ -9,8 +9,8 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "cube_secret"
   end
 
-  CUBETYPES = ["2x2", "3x3", "4x4", "5x5", "6x6", "7x7"]
-  
+  #CUBETYPES = ["2x2", "3x3", "4x4", "5x5", "6x6", "7x7"]
+
   get '/' do
     
     erb :index
@@ -25,5 +25,11 @@ class ApplicationController < Sinatra::Base
     def current_cuber
       @current_cuber ||= Cuber.find_by(id: session[:user_id]) if session[:user_id]
     end
+
+    def cube_types
+      ["2x2", "3x3", "4x4", "5x5", "6x6", "7x7"]
+    end
   end
+
+
 end

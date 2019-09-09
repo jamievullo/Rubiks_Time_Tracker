@@ -3,7 +3,7 @@
 
 
 <form action="/cube_times" method="POST">
-<% CUBETYPES.each do |type| %>
+<% cube_types.each do |type| %>
 <input type="radio" name="cubetype" id="<%= type %>" value="<%= type %>"><%= type %></input></br>
 <% end %>
 

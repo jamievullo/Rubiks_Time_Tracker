@@ -15,7 +15,19 @@
   </head>
   <body>
     <div class="wrapper">
-      
+      <!--do a conditional "if current_user render nav bar"  -->
+     <% if logged_in? %>
+     
+      <h2>Welcome, <%= current_cuber.name %>!</h2>
+
+<a href="/cube_times/new"><button>-Record Cube Time-</button></a>
+<br>
+<a href="/cubers/<%= current_cuber.id %>"><button>-Your Stats and History-</button></a> 
+<br>
+<a href="/logout"><button>-Logout-</button></a>
+
+<% end %>
+
         <%= yield %>
 
       <footer class="branding">

@@ -2,7 +2,7 @@
 
 <h2><%= @cuber.name %>'s Home Page</h2>
 
-<% @cubetypes.each do |type| %>
+<% cube_types.each do |type| %>
 <a href='/cube_times/type/<%= type %>'><button type="submit"><%= type %></button></a>
 <% end %>
 <br>

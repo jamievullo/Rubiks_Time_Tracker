@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       if !!cuber && cuber.authenticate(params[:password])
         session[:user_id] = cuber.id
 
-        redirect '/cube_times'
+        redirect "/cubers/#{cuber.id}"
       else
         redirect '/sessions/login'
       end
