@@ -1,5 +1,7 @@
 class CubeTimesController < ApplicationController
 
+  CUBETYPES = ["2x2", "3x3", "4x4", "5x5", "6x6", "7x7"]
+
   get "/cube_times" do
     if logged_in?
       @cuber = current_cuber
@@ -12,6 +14,7 @@ class CubeTimesController < ApplicationController
   get "/cube_times/new" do
     @cuber = current_cuber
     if logged_in?
+
       erb :"/cube_times/new"
     else  
       redirect '/login'
@@ -19,17 +22,13 @@ class CubeTimesController < ApplicationController
   end
 
   post "/cube_times" do
-    #binding.pry
     if logged_in?
-      if params[:cube_time] == "" || params[:cube_type] == ""
+      if params[:cube_time] == "" || params[:cubetype] == ""
 
         redirect '/cube_times/new'
       else
-        #binding.pry
-        @cube_time = CubeTime.create(cube_time: params[:cube_time])
+        @cube_time = CubeTime.create(cube_time: params[:cube_time], cube_type: params[:cubetype])
         @cube_time.cuber_id = current_cuber.id
-        @cube_type = CubeType.find_by_id(params[:cube_type])
-        # binding.pry
         if @cube_time.save
           
           redirect "/cube_times/#{@cube_time.id}"
@@ -51,6 +50,25 @@ class CubeTimesController < ApplicationController
     else 
       redirect "/login" 
     end
+  end
+
+  get "/cube_times/type/:cube_type" do 
+    if logged_in? 
+      @type = params[:cube_type]
+      @cuber = current_cuber
+      @times = CubeTime.where(cuber_id: @cuber.id).where(cube_type: params[:cube_type])
+      if @times.empty? 
+        redirect '/cube_times'
+      else
+       @best_cube_time = @times.order(cube_time: :asc).first
+       @average_cube_time = @times.sum("cube_time")/@times.count
+       @last_5 = @times.last(5)
+       erb :"/cube_times/type" 
+      end
+    else
+      redirect '/login'
+    
+    end  
   end
 
   get "/cube_times/:id/edit" do

@@ -3,8 +3,8 @@
 
 
 <form action="/cube_times" method="POST">
-<% CubeType.all.each do |type| %>
-<input type="radio" name="cube_type" id="<%= type.id %>" value="<%= type.id %>"><%= type.name %></input></br>
+<% CUBETYPES.each do |type| %>
+<input type="radio" name="cubetype" id="<%= type %>" value="<%= type %>"><%= type %></input></br>
 <% end %>
 
 <h3>Enter Your last Cube Time here:</h3>

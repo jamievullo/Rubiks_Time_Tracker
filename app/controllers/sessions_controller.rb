@@ -39,4 +39,9 @@ class SessionsController < ApplicationController
         
         redirect '/'
     end
+
+    get '/*' do
+      "Error"
+    end
+
 end

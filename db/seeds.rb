@@ -1,5 +1,0 @@
-CubeType.create(name: "2x2")
-CubeType.create(name: "3x3")
-CubeType.create(name: "4x4")
-CubeType.create(name: "5x5")
-CubeType.create(name: "6x6")
