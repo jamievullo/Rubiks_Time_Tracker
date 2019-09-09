@@ -1,7 +1,5 @@
 class CubeTimesController < ApplicationController
 
-  CUBETYPES = ["2x2", "3x3", "4x4", "5x5", "6x6", "7x7"]
-
   get "/cube_times" do
     if logged_in?
       @cuber = current_cuber

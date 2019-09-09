@@ -1,7 +1,5 @@
 class CubersController < ApplicationController
 
-  CUBETYPES = ["2x2", "3x3", "4x4", "5x5", "6x6", "7x7"]
-
   get "/cubers/index" do
     if logged_in?
       @cubetypes = CUBETYPES
