@@ -42,13 +42,16 @@ class CubeTimesController < ApplicationController
   get "/cube_times/:id" do    
     if logged_in?
       @cuber = current_cuber
-      if CubeTime.find(params[:id])
-        @cube_time = CubeTime.find(params[:id])
-        #binding.pry
+      #binding.pry
+      @cube_time = CubeTime.find_by_id(params[:id])
+      if @cube_time
         erb :"/cube_times/show"
       else 
-      redirect "/login" 
+        erb :"/sessions/error"
       end
+      else 
+      redirect "/login" 
+      
     end
   end
 
