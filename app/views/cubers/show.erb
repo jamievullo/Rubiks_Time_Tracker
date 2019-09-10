@@ -1,18 +1,18 @@
 <header><img align="right" src="/images/The_Rock_Rubiks_Cube.gif"></header>
 
-<h2><%= @cuber.name %>'s Home Page</h2>
+    <h2><%= @cuber.name %>'s Home Page</h2>
 
-<% cube_types.each do |type| %>
-<a href='/cube_times/type/<%= type %>'><button type="submit"><%= type %></button></a>
-<% end %>
-<br>
+    <% cube_types.each do |type| %>
+    <a href='/cube_times/type/<%= type %>'><button type="submit"><%= type %></button></a>
+    <% end %>
+    <br>
 
-<br><p>Last 5 Cube Times: </p>
-<% @last_5.each do |x| %>
-<p><%= x.cube_time %> - <%= x.cube_type %></p>
-<% end %>
+    <br><p>Last 5 Cube Times: </p>
+    <% @last_5.each do |x| %>
+    <p><%= x.cube_time %> - <%= x.cube_type %></p>
+    <% end %>
 
-<a href="/cube_times/new"><input type="submit" value="Enter New Time"></a>
-<br>
-<a href="/logout"><input type="submit" value="Logout"></a>
+    <a href="/cube_times/new"><input type="submit" value="Enter New Time"></a>
+    <br>
+    <a href="/logout"><input type="submit" value="Logout"></a>
 

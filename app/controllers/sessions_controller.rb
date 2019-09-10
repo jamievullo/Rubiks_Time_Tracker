@@ -41,7 +41,9 @@ class SessionsController < ApplicationController
     end
 
     get '/*' do
-      "Error"
+      
+        erb  :"/sessions/error"
+
     end
 
 end
