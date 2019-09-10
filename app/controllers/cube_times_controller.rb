@@ -3,7 +3,7 @@ class CubeTimesController < ApplicationController
   get "/cube_times" do
     if logged_in?
       @cuber = current_cuber
-      erb :"/cube_times/index"
+      erb :'/cubers/show'
     else  
       redirect '/login'
     end
