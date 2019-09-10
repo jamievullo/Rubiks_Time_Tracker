@@ -1,3 +1,4 @@
+    <header><img align="right" src="/images/rubiksknife.gif"></header>
     <br>
     <% cube_types.each do |type| %>
     <a href='/cube_times/type/<%= type %>'><button type="submit"><%= type %></button></a>
@@ -5,11 +6,17 @@
 
 <h1>Your <%= @type %> Stats</h1>
 
-    <p>Personal Best: <br> <%= @best_cube_time.cube_time %></p>
-    <p>Overall Average: <br> <%= @average_cube_time.round(2) %></p>
-    <p>Last 5 Cube Times: </p>
-    <% @last_5.each do |x| %>
-    <p><%= x.cube_time %> - <%= x.cube_type %></p>
-    <% end %>
+        <% if @best_cube_time == nil %>
+            <%= "You have no cube times currently, let's change that!!" %>
+        <% else %>
+            <p>Personal Best: <br> <%= @best_cube_time.cube_time %></p>
+            <p>Overall Average: <br> <%= @average_cube_time.round(2) %></p>
+            
+            <p>Last 5 Cube Times: </p>
+            <% @last_5.each do |x| %>
+                <p><%= x.cube_time %></p>
+            <% end %>
+        <% end %>
+        
 
 <a href="/cube_times/new"><input type="submit" value="Enter New Time"></a>

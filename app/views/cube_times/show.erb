@@ -1,5 +1,19 @@
 <header><img align="right" src="/images/not_rubiks_cube.gif"></header>
 
+ <style>
+    h3 {
+        color: yellow;
+    }
+
+    label {
+        color: yellow;
+    }
+
+    input {
+        color: blue;
+    }
+    </style>
+
     <h2><%= @cuber.name %>'s Last Cube Time</h2>
     <p><%= @cube_time.cube_time %></p>
     <a href="/cube_times/new"><input type="submit" value="Enter New Time"></a>

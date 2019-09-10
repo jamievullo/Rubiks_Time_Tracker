@@ -7,10 +7,10 @@
     <% end %>
     <br>
 
-    <br><p>Last 5 Cube Times: </p>
         <% if @last_5 == nil %>
-            <%= "You have no cube times currently, let's change that!!" %>
+            <br><%= "You have no cube times currently, let's change that!!" %>
         <% else %>
+            <br><p>Last 5 Cube Times: </p>
             <% @last_5.each do |x| %>
             <p><%= x.cube_time %> - <%= x.cube_type %></p>
             <% end %>
