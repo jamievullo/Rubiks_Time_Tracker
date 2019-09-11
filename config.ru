@@ -6,7 +6,6 @@ end
 
 use Rack::MethodOverride
 
-
 use CubeTimesController
 use CubersController
 use SessionsController
