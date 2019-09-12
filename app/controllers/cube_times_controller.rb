@@ -104,7 +104,11 @@ class CubeTimesController < ApplicationController
 
   delete "/cube_times/:id/delete" do
     if logged_in?
-      redirect "/cube_times/new"
+      @cuber = current_cuber
+      @cube_time = CubeTime.find_by_id(params[:id])
+      @cube_time.destroy
+
+      redirect "/cubers/show"
     else 
       redirect "/login"   
     end
