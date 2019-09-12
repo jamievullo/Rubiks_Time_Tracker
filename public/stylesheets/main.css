@@ -87,6 +87,10 @@
     padding: 2px;
   }
 
+  input[type="radio"]{
+    margin: 0px 10px 0px 10px;
+  }
+
   button {
     padding: 2px;
   }
