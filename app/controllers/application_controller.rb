@@ -25,7 +25,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def cube_types
-      ["2x2", "3x3", "4x4", "5x5", "6x6", "7x7"]
+      ["2x2", "3x3", "4x4", "5x5", "3x3-OH", "3x3-BF", "3x3-FM", "Megaminx", "Pyraminx", "Skewb", "Square-1", "6x6", "7x7"]
     end
 
   end
