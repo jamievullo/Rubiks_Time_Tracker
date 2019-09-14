@@ -20,18 +20,24 @@ class CubeTimesController < ApplicationController
   end
 
   post "/cube_times" do
+    #binding.pry
     if logged_in?
-      if params[:cube_time] == "" || params[:cubetype] == ""
+      #raise params.inspect
+      if params[:cube_time] == "" || !params.include?(:cubetype)
 
         redirect '/cube_times/new'
       else
-        @cube_time = CubeTime.create(cube_time: params[:cube_time], cube_type: params[:cubetype])
-        @cube_time.cuber_id = current_cuber.id
-        if @cube_time.save
+        if is_number?(params[:cube_time])
+          @cube_time = CubeTime.create(cube_time: params[:cube_time], cube_type: params[:cubetype])
+          @cube_time.cuber_id = current_cuber.id
+          if @cube_time.save
           
-          redirect "/cube_times/#{@cube_time.id}"
-        else  
-          redirect '/cube_times/new'
+            redirect "/cube_times/#{@cube_time.id}"
+          else  
+            redirect '/cube_times/new'
+          end
+        else
+            redirect :"/sessions/error"
         end
       end
     else
