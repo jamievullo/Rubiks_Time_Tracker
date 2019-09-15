@@ -8,6 +8,7 @@ A simple time tracker web application/content management system made using the S
 * Technologies
 * Setup
 * Resources
+* License
 
 ### Description
 This is a small application that can be used for keeping track of your cube times and averages while honing your skills at SpeedCubing.
@@ -47,3 +48,6 @@ This application utilizes the Ruby language and several gems (listed)
 * https://stackoverflow.com/
 * https://www.favicon-generator.org/
 * https://youtu.be/rgUp302f_lY
+
+### License
+* https://github.com/jamievullo/Rubiks_Time_Tracker/blob/master/License
