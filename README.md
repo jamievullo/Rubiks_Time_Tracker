@@ -48,7 +48,13 @@ This application utilizes the Ruby language and several gems (listed)
 * https://stackoverflow.com/
 * https://www.favicon-generator.org/
 * https://youtu.be/rgUp302f_lY
+<<<<<<< HEAD
 * https://stackoverflow.com/questions/5661466/test-if-string-is-a-number-in-ruby-on-rails
 
 ### License
 * https://github.com/jamievullo/Rubiks_Time_Tracker/blob/master/License
+=======
+
+### License
+* https://github.com/jamievullo/Rubiks_Time_Tracker/blob/master/License
+>>>>>>> b5b924acb811dde7135bd3d720260e112b10cfa2
