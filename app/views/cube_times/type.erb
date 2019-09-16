@@ -12,7 +12,7 @@
             
                 <p>Last 5 Cube Times: </p>
                 <% @last_5.each do |x| %>
-                <p><%= x.cube_time %></p>
+                <p><%= x.cube_time %> - <%= x.created_at.strftime("%b, %d, %Y") %></p>
                 <% end %>
             <% else %>
                 <%= "You have no cube times currently, let's change that!!" %>
